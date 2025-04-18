@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Xếp loại sinh viên</title>
+</head>
+<body>
+  <h2>Nhập điểm trung bình của sinh viên (0 - 10):</h2>
+  
+  <input type="number" id="diemInput" placeholder="Ví dụ: 7.5" step="0.1">
+  <button onclick="xeploai()">Xếp loại</button>
+
+  <h3 id="ketQua"></h3>
+
+  <script>
+    function xeploai() {
+      let diem = parseFloat(document.getElementById("diemInput").value);
+      let ketQua = "";
+
+      if (diem >= 9 && diem <= 10) {
+        ketQua = "Xếp loại: Xuất sắc";
+      } else if (diem >= 7 && diem < 9) {
+        ketQua = "Xếp loại: Khá";
+      } else if (diem >= 5 && diem < 7) {
+        ketQua = "Xếp loại: Trung bình";
+      } else if (diem >= 0 && diem < 5) {
+        ketQua = "Xếp loại: Yếu";
+      } else {
+        ketQua = "Điểm không hợp lệ. Vui lòng nhập từ 0 đến 10.";
+      }
+
+      document.getElementById("ketQua").innerText = ketQua;
+    }
+  </script>
+</body>
+</html>
